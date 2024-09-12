@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var lightTableView: UITableView!
     let viewModel = MainViewModel()
@@ -19,31 +19,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         
         lightTableView.register(UINib(nibName: "CustomSwitchCell", bundle: nil), forCellReuseIdentifier: "CustomSwitchCell")
-                
         lightTableView.delegate = self
         lightTableView.dataSource = self
         lightTableView.reloadData()
     
         styleUI()
     }
-
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        // Ajustar o frame da NavigationBar para ignorar a Safe Area
-        if let navBar = self.navigationController?.navigationBar {
-            var frame = navBar.frame
-            let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-            frame.origin.y = -statusBarHeight // Mover a NavigationBar para cima
-            navBar.frame = frame
-        }
-    }
     
     func styleUI() {
         navigationItem.title = "The Switcher"
         navigationController?.navigationBar.backgroundColor = UIColor(hex: "7D9F59")
     }
+    
+    @objc func switchChanged(_ sender: UISwitch) {
+        
+        let index = sender.tag
+        viewModel.updateSwitchState(at: index, isOn: sender.isOn)
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        lightTableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let detailVC = segue.destination as? DetailViewController,
+               let data = sender as? (isSwitchOn: Bool, roomName: String) {
+                let detailViewModel = DetailViewModel(isSwitchOn: data.isSwitchOn, roomSelected: data.roomName)
+                detailVC.viewModel = detailViewModel
+            }
+        }
+    }
+}
+
+//MARK: - Tableviews
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.items.count
@@ -71,27 +80,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         performSegue(withIdentifier: "showDetail", sender: (isSwitchOn: viewModel.items[indexPath.row].isSwitchOn, roomName: selectedRoom))
     }
-    
-    @objc func switchChanged(_ sender: UISwitch) {
-        
-        let index = sender.tag
-        viewModel.updateSwitchState(at: index, isOn: sender.isOn)
-        
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        lightTableView.reloadRows(at: [indexPath], with: .none)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let detailVC = segue.destination as? DetailViewController,
-               let data = sender as? (isSwitchOn: Bool, roomName: String) {
-                let detailViewModel = DetailViewModel(isSwitchOn: data.isSwitchOn, roomSelected: data.roomName)
-                detailVC.viewModel = detailViewModel
-            }
-        }
-    }
 }
 
+
+//MARK: - UIColor Extension
 
 extension UIColor {
     // Inicializador para converter hexadecimal em UIColor

@@ -19,14 +19,18 @@ class DetailViewController: UIViewController {
     var viewModel: DetailViewModel?
     
     override func viewDidLoad() {
-        imageLight.image = UIImage(named: viewModel?.isSwitchOn ?? false ? "light_Image_On" : "light_Image_Off")
-        roomLbl.text = "Your \(viewModel?.roomSelected ?? "Unknown Room") light is"
-        onOrOffLbl.text = viewModel?.isSwitchOn ?? false ? "ON" : "OFF"
         styleUI()
     }
     
     func styleUI() {
         
+        //Setup and style of labels
+        imageLight.image = UIImage(named: viewModel?.isSwitchOn ?? false ? "light_Image_On" : "light_Image_Off")
+        roomLbl.text = "Your \(viewModel?.roomSelected ?? "Unknown Room") light is"
+        onOrOffLbl.text = viewModel?.isSwitchOn ?? false ? "ON" : "OFF"
+        onOrOffLbl.font = UIFont.boldSystemFont(ofSize: 40)
+        
+        //Setup and style of the navbar
         navigationItem.title = viewModel?.roomSelected ?? "Unknown Room"
         
         // Criar um botão de voltar personalizado com título e ícone
@@ -42,8 +46,6 @@ class DetailViewController: UIViewController {
         
         let backButtonItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = backButtonItem
-        
-        onOrOffLbl.font = UIFont.boldSystemFont(ofSize: 40)
     }
     
     @objc func backButtonPressed() {
