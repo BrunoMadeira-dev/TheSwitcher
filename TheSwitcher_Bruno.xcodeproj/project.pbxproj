@@ -16,6 +16,10 @@
 		541F87E62C9350B300BB5129 /* TheSwitcher_BrunoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F87E52C9350B300BB5129 /* TheSwitcher_BrunoTests.swift */; };
 		541F87F02C9350B300BB5129 /* TheSwitcher_BrunoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F87EF2C9350B300BB5129 /* TheSwitcher_BrunoUITests.swift */; };
 		541F87F22C9350B300BB5129 /* TheSwitcher_BrunoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F87F12C9350B300BB5129 /* TheSwitcher_BrunoUITestsLaunchTests.swift */; };
+		541F88022C93655300BB5129 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F88012C93655300BB5129 /* MainViewModel.swift */; };
+		541F88042C93658F00BB5129 /* SwitchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F88032C93658F00BB5129 /* SwitchItemModel.swift */; };
+		541F88062C93676100BB5129 /* CustomSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541F88052C93676000BB5129 /* CustomSwitchCell.xib */; };
+		541F88082C93677F00BB5129 /* CustomSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F88072C93677F00BB5129 /* CustomSwitchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		541F87EB2C9350B300BB5129 /* TheSwitcher_BrunoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheSwitcher_BrunoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		541F87EF2C9350B300BB5129 /* TheSwitcher_BrunoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheSwitcher_BrunoUITests.swift; sourceTree = "<group>"; };
 		541F87F12C9350B300BB5129 /* TheSwitcher_BrunoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheSwitcher_BrunoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		541F88012C93655300BB5129 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		541F88032C93658F00BB5129 /* SwitchItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemModel.swift; sourceTree = "<group>"; };
+		541F88052C93676000BB5129 /* CustomSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSwitchCell.xib; sourceTree = "<group>"; };
+		541F88072C93677F00BB5129 /* CustomSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,11 @@
 		541F87CD2C9350AF00BB5129 /* TheSwitcher_Bruno */ = {
 			isa = PBXGroup;
 			children = (
+				541F88002C93533B00BB5129 /* View */,
+				541F87FF2C93532800BB5129 /* ViewModel */,
+				541F87FE2C93531D00BB5129 /* Model */,
 				541F87CE2C9350AF00BB5129 /* AppDelegate.swift */,
 				541F87D02C9350AF00BB5129 /* SceneDelegate.swift */,
-				541F87D22C9350AF00BB5129 /* ViewController.swift */,
-				541F87D42C9350AF00BB5129 /* Main.storyboard */,
 				541F87D72C9350B200BB5129 /* Assets.xcassets */,
 				541F87D92C9350B200BB5129 /* LaunchScreen.storyboard */,
 				541F87DC2C9350B200BB5129 /* Info.plist */,
@@ -125,6 +134,33 @@
 				541F87F12C9350B300BB5129 /* TheSwitcher_BrunoUITestsLaunchTests.swift */,
 			);
 			path = TheSwitcher_BrunoUITests;
+			sourceTree = "<group>";
+		};
+		541F87FE2C93531D00BB5129 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				541F88032C93658F00BB5129 /* SwitchItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		541F87FF2C93532800BB5129 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				541F88012C93655300BB5129 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		541F88002C93533B00BB5129 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				541F87D42C9350AF00BB5129 /* Main.storyboard */,
+				541F87D22C9350AF00BB5129 /* ViewController.swift */,
+				541F88052C93676000BB5129 /* CustomSwitchCell.xib */,
+				541F88072C93677F00BB5129 /* CustomSwitchCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +269,7 @@
 			files = (
 				541F87D82C9350B200BB5129 /* Assets.xcassets in Resources */,
 				541F87DB2C9350B200BB5129 /* Base in Resources */,
+				541F88062C93676100BB5129 /* CustomSwitchCell.xib in Resources */,
 				541F87D62C9350AF00BB5129 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541F88082C93677F00BB5129 /* CustomSwitchCell.swift in Sources */,
 				541F87D32C9350AF00BB5129 /* ViewController.swift in Sources */,
 				541F87CF2C9350AF00BB5129 /* AppDelegate.swift in Sources */,
 				541F87D12C9350AF00BB5129 /* SceneDelegate.swift in Sources */,
+				541F88022C93655300BB5129 /* MainViewModel.swift in Sources */,
+				541F88042C93658F00BB5129 /* SwitchItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

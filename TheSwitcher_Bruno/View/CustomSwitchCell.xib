@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomSwitchCell" rowHeight="236" id="3Ez-QO-OOt" customClass="CustomSwitchCell" customModule="TheSwitcher_Bruno" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ez-QO-OOt" id="H6w-z7-Hom">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wT7-9A-6kD">
+                        <rect key="frame" x="20" y="0.0" width="353" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5j-8D-YfE">
+                                <rect key="frame" x="0.0" y="27.333333333333336" width="304" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Evz-wz-2X7">
+                                <rect key="frame" x="304" y="22" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="dRH-rC-x3g"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wT7-9A-6kD" firstAttribute="leading" secondItem="H6w-z7-Hom" secondAttribute="leading" constant="20" id="Kvq-dG-8qf"/>
+                    <constraint firstAttribute="bottom" secondItem="wT7-9A-6kD" secondAttribute="bottom" id="b5m-Dv-xJI"/>
+                    <constraint firstItem="wT7-9A-6kD" firstAttribute="top" secondItem="H6w-z7-Hom" secondAttribute="top" id="mOa-ah-qwJ"/>
+                    <constraint firstAttribute="trailing" secondItem="wT7-9A-6kD" secondAttribute="trailing" constant="20" id="nc5-HW-dpw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="switchLbl" destination="t5j-8D-YfE" id="Lc4-T3-Rkb"/>
+                <outlet property="switchView" destination="H6w-z7-Hom" id="5px-m7-dtY"/>
+                <outlet property="switcher" destination="Evz-wz-2X7" id="n1N-fW-jFS"/>
+            </connections>
+            <point key="canvasLocation" x="31.297709923664122" y="51.408450704225352"/>
+        </tableViewCell>
+    </objects>
+</document>
