@@ -10,10 +10,10 @@ import Foundation
 class MainViewModel {
     
     var items: [SwitchItemModel] = [
-        SwitchItemModel(title: "Item 1", isSwitchOn: false),
-        SwitchItemModel(title: "Item 2", isSwitchOn: false),
-        SwitchItemModel(title: "Item 3", isSwitchOn: false),
-        SwitchItemModel(title: "Item 4", isSwitchOn: false)
+        SwitchItemModel(title: "Kitchen", isSwitchOn: false),
+        SwitchItemModel(title: "Living Room", isSwitchOn: false),
+        SwitchItemModel(title: "Master Bedroom", isSwitchOn: false),
+        SwitchItemModel(title: "Guest's Bedroom", isSwitchOn: false)
     ]
     
     func getItem(at index: Int) -> SwitchItemModel {

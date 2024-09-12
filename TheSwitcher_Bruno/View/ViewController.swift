@@ -58,22 +58,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Preencher a célula com dados placeholder
         cell.switchLbl.text = item.title
         cell.switcher.isOn = item.isSwitchOn
-        cell.switcher.addTarget(self, action: #selector(switchChanged(_:)), for: [])
+        cell.switcher.tag = indexPath.row
+        cell.switcher.addTarget(self, action: #selector(switchChanged(_:)), for: .touchUpInside)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = viewModel.getItem(at: indexPath.row)
-        let newSwitchState = !item.isSwitchOn
-        viewModel.updateSwitchState(at: indexPath.row, isOn: newSwitchState)
+        let selectedRoom = item.title
         lightTableView.reloadRows(at: [indexPath], with: .fade)
+        
+        performSegue(withIdentifier: "showDetail", sender: (isSwitchOn: viewModel.items[indexPath.row].isSwitchOn, roomName: selectedRoom))
     }
     
     @objc func switchChanged(_ sender: UISwitch) {
-        viewModel.updateSwitchState(at: sender.tag, isOn: sender.isOn)
+        
+        let index = sender.tag
+        viewModel.updateSwitchState(at: index, isOn: sender.isOn)
+        
         let indexPath = IndexPath(row: sender.tag, section: 0)
         lightTableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let detailVC = segue.destination as? DetailViewController,
+               let data = sender as? (isSwitchOn: Bool, roomName: String) {
+                let detailViewModel = DetailViewModel(isSwitchOn: data.isSwitchOn, roomSelected: data.roomName)
+                detailVC.viewModel = detailViewModel
+            }
+        }
     }
 }
 

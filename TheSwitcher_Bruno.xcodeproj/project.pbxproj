@@ -20,6 +20,8 @@
 		541F88042C93658F00BB5129 /* SwitchItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F88032C93658F00BB5129 /* SwitchItemModel.swift */; };
 		541F88062C93676100BB5129 /* CustomSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541F88052C93676000BB5129 /* CustomSwitchCell.xib */; };
 		541F88082C93677F00BB5129 /* CustomSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F88072C93677F00BB5129 /* CustomSwitchCell.swift */; };
+		541F880A2C9395D200BB5129 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F88092C9395D200BB5129 /* DetailViewController.swift */; };
+		541F880E2C939AB400BB5129 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F880D2C939AB300BB5129 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		541F88032C93658F00BB5129 /* SwitchItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemModel.swift; sourceTree = "<group>"; };
 		541F88052C93676000BB5129 /* CustomSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSwitchCell.xib; sourceTree = "<group>"; };
 		541F88072C93677F00BB5129 /* CustomSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchCell.swift; sourceTree = "<group>"; };
+		541F88092C9395D200BB5129 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		541F880D2C939AB300BB5129 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				541F88012C93655300BB5129 /* MainViewModel.swift */,
+				541F880D2C939AB300BB5129 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				541F87D22C9350AF00BB5129 /* ViewController.swift */,
 				541F88052C93676000BB5129 /* CustomSwitchCell.xib */,
 				541F88072C93677F00BB5129 /* CustomSwitchCell.swift */,
+				541F88092C9395D200BB5129 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +307,8 @@
 				541F87D12C9350AF00BB5129 /* SceneDelegate.swift in Sources */,
 				541F88022C93655300BB5129 /* MainViewModel.swift in Sources */,
 				541F88042C93658F00BB5129 /* SwitchItemModel.swift in Sources */,
+				541F880A2C9395D200BB5129 /* DetailViewController.swift in Sources */,
+				541F880E2C939AB400BB5129 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
