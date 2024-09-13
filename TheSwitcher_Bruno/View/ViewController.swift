@@ -31,14 +31,6 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor(hex: "7D9F59")
     }
     
-    @objc func switchChanged(_ sender: UISwitch) {
-        
-        let index = sender.tag
-        viewModel.updateSwitchState(at: index, isOn: sender.isOn)
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        lightTableView.reloadRows(at: [indexPath], with: .none)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let detailVC = segue.destination as? DetailViewController,
@@ -79,6 +71,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         lightTableView.reloadRows(at: [indexPath], with: .fade)
         
         performSegue(withIdentifier: "showDetail", sender: (isSwitchOn: viewModel.items[indexPath.row].isSwitchOn, roomName: selectedRoom))
+    }
+    
+    @objc func switchChanged(_ sender: UISwitch) {
+        
+        let index = sender.tag
+        viewModel.updateSwitchState(at: index, isOn: sender.isOn)
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        lightTableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
