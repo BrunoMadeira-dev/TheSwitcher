@@ -65,6 +65,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nNz-G2-QUg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="D0M-WA-7cg" secondAttribute="trailing" id="D3h-aO-mOG"/>
@@ -87,15 +88,12 @@
         <scene sceneID="hJc-nd-DqW">
             <objects>
                 <viewController id="YQ7-QQ-8Hf" customClass="DetailViewController" customModule="TheSwitcher_Bruno" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wWU-en-5ab">
+                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="wWU-en-5ab">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sCE-fT-TIn">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dPq-Ce-oNk">
-                                <rect key="frame" x="0.0" y="145" width="393" height="100"/>
+                                <rect key="frame" x="0.0" y="179" width="393" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZv-Yc-Por">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -123,24 +121,27 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBl-8u-fPw">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="179"/>
+                            </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="JXd-kr-zts"/>
+                        <viewLayoutGuide key="safeArea" id="bFF-13-nMV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sCE-fT-TIn" firstAttribute="top" secondItem="JXd-kr-zts" secondAttribute="top" id="JFT-Z1-Q8o"/>
-                            <constraint firstItem="JXd-kr-zts" firstAttribute="trailing" secondItem="sCE-fT-TIn" secondAttribute="trailing" id="QIa-m8-IJ6"/>
-                            <constraint firstItem="dPq-Ce-oNk" firstAttribute="leading" secondItem="JXd-kr-zts" secondAttribute="leading" id="XW4-Vz-ec5"/>
-                            <constraint firstItem="dPq-Ce-oNk" firstAttribute="top" secondItem="sCE-fT-TIn" secondAttribute="bottom" constant="20" id="df8-Oc-QSQ"/>
-                            <constraint firstItem="JXd-kr-zts" firstAttribute="bottom" secondItem="dPq-Ce-oNk" secondAttribute="bottom" constant="470" id="f4n-Vf-IYT"/>
-                            <constraint firstItem="sCE-fT-TIn" firstAttribute="leading" secondItem="JXd-kr-zts" secondAttribute="leading" id="ox3-Ar-1Yl"/>
-                            <constraint firstItem="JXd-kr-zts" firstAttribute="trailing" secondItem="dPq-Ce-oNk" secondAttribute="trailing" id="pfZ-WN-LRe"/>
+                            <constraint firstItem="dPq-Ce-oNk" firstAttribute="top" secondItem="tBl-8u-fPw" secondAttribute="bottom" id="Rze-D5-ajB"/>
+                            <constraint firstItem="bFF-13-nMV" firstAttribute="trailing" secondItem="tBl-8u-fPw" secondAttribute="trailing" id="WEd-M7-2Um"/>
+                            <constraint firstItem="dPq-Ce-oNk" firstAttribute="leading" secondItem="wWU-en-5ab" secondAttribute="leading" id="XW4-Vz-ec5"/>
+                            <constraint firstItem="tBl-8u-fPw" firstAttribute="top" secondItem="bFF-13-nMV" secondAttribute="top" id="c3u-1E-0hc"/>
+                            <constraint firstAttribute="bottom" secondItem="dPq-Ce-oNk" secondAttribute="bottom" constant="470" id="f4n-Vf-IYT"/>
+                            <constraint firstItem="tBl-8u-fPw" firstAttribute="leading" secondItem="bFF-13-nMV" secondAttribute="leading" id="i3N-0T-I1e"/>
+                            <constraint firstAttribute="trailing" secondItem="dPq-Ce-oNk" secondAttribute="trailing" id="pfZ-WN-LRe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jA5-UU-zEd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="C0B-Xt-h7c"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageLight" destination="sCE-fT-TIn" id="5Qi-hW-gVg"/>
+                        <outlet property="imageLight" destination="tBl-8u-fPw" id="4Kb-ho-tOX"/>
                         <outlet property="onOrOffLbl" destination="Uav-WZ-sXB" id="bFk-B4-Bfr"/>
                         <outlet property="roomLbl" destination="wZv-Yc-Por" id="Ods-Sx-c8L"/>
                     </connections>
